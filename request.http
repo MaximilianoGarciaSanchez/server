@@ -1,0 +1,96 @@
+###Obtener todos los empleados
+GET http://localhost:3000/api/empleados HTTP/1.1
+Content-Type: application/json
+
+###Insertar Empleado
+POST http://localhost:3100/api/empleados HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Pedro Paramo ss",
+    "puesto": "Developer Senior",
+    "departamento": "Compuert Sciences 11",
+    "salario": 22000
+}
+
+###Consultar por ID
+GET http://localhost:3000/api/empleados/626dd02738893b9e0b126fb0 HTTP/1.1
+
+
+###Actualizar empleado
+PUT http://localhost:3000/api/empleados/626dd02738893b9e0b126fb0 HTTP/1.1
+Content-Type: application/json
+
+{
+    "nombre": "Pedro Paramo2",
+    "puesto": "Developer JR122",
+    "departamento": "Compuert Sciences321",
+    "salario": 220020
+}
+
+###Eliminar empleado
+DELETE http://localhost:3000/api/empleados/626dd02738893b9e0b126fb0 HTTP/1.1
+Content-Type: application/json
+
+
+////////////////////////////////////////////////USUARIOS///////////////////////////////////////////
+
+
+
+###Usuarios
+GET http://localhost:3100/api/users HTTP/1.1
+Content-Type: application/json
+Authorization:token-auth eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyOGZkZDM1ZWYwNjRiMmNjNmZiODZkOCIsIm5hbWUiOiJNYXhpbWlsaWFubyBHYXJjaWEgU2FuY2hleiIsImVtYWlsIjoibWF4aWdhcmNpYXNhbmNoZXoyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJFlHU2s3NXZudWM1RHlPaC94cVRpOWVUTlZwTlc0am1scnJFZkZKaEgxcUlHQURGNjVvSlh5IiwidGlwbyI6IjEiLCJfX3YiOjB9LCJpYXQiOjE2NTUyOTQ3NTIsImV4cCI6MTY1NTI5ODM1Mn0.UCvTbSkYXEL40h0ec14ShDK-XZAkeReXGtes9PVpFaU
+
+###Crear un usuario
+POST http://localhost:3100/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Maximiliano",
+    "email":"maxigarciasanchez2@gmail.com",
+    "password": "Max18450510",
+    "tipo": 1
+
+
+}
+
+###Autentificar Usuario
+POST http://localhost:3100/api/login HTTP/1.1
+Content-Type: application/json
+
+{
+   "email":"maxigarciasanchez2@gmail.com",
+    "password": "Max18450510"
+}
+
+
+###Consultar por ID
+GET http://localhost:3100/api/users/628fdd35ef064b2cc6fb86d8/ HTTP/1.1
+Content-Type: application/json
+Authorization:token-auth eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyOGZkZDM1ZWYwNjRiMmNjNmZiODZkOCIsIm5hbWUiOiJNYXhpbWlsaWFubyIsImVtYWlsIjoibWF4aWdhcmNpYXNhbmNoZXoyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDFUZ21tOU4zUmdqNy5UQnJQQm5KTk9udGZmbXNXcEcyVVc1cGh2bWUuTHNXV3NkcjVNdWVXIiwidGlwbyI6IjEiLCJfX3YiOjB9LCJpYXQiOjE2NTQzNzI1NTcsImV4cCI6MTY1NDM3NjE1N30.NQp25IRkFqF5a8OHif8_5BgEEwSfWD-2gY3DovRNF1c
+
+
+{
+    "name": "Ivan2",
+    "email":"ivan2@gmail.com",
+    "password": "Max123"
+}
+
+###Eliminar
+DELETE http://localhost:3100/api/users/628fd473f3bab089e0d11cf8/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyOGZkZDM1ZWYwNjRiMmNjNmZiODZkOCIsIm5hbWUiOiJNYXhpbWlsaWFubyIsImVtYWlsIjoibWF4aWdhcmNpYXNhbmNoZXoyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDFUZ21tOU4zUmdqNy5UQnJQQm5KTk9udGZmbXNXcEcyVVc1cGh2bWUuTHNXV3NkcjVNdWVXIiwidGlwbyI6IjEiLCJfX3YiOjB9LCJpYXQiOjE2NTM1OTU1NDEsImV4cCI6MTY1MzU5OTE0MX0.dhkmIHIeRoV75i3VhYQqk_ThgT7fskBwPTVVsUilu1Y
+
+
+###Modificar por ID
+GET http://localhost:3100/api/users/628fb10f65ae2273a4f0998d/ HTTP/1.1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYyOGZkZDM1ZWYwNjRiMmNjNmZiODZkOCIsIm5hbWUiOiJNYXhpbWlsaWFubyIsImVtYWlsIjoibWF4aWdhcmNpYXNhbmNoZXoyQGdtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJhJDEwJDFUZ21tOU4zUmdqNy5UQnJQQm5KTk9udGZmbXNXcEcyVVc1cGh2bWUuTHNXV3NkcjVNdWVXIiwidGlwbyI6IjEiLCJfX3YiOjB9LCJpYXQiOjE2NTM1OTU1NDEsImV4cCI6MTY1MzU5OTE0MX0.dhkmIHIeRoV75i3VhYQqk_ThgT7fskBwPTVVsUilu1Y
+
+{
+    "name": "Ivan2",
+    "email":"ivan2@gmail.com",
+    "password": "Max123"
+}
+
